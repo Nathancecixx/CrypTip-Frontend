@@ -25,7 +25,7 @@ const LandingPage = () => {
     const navigate = useNavigate();
 
     const handleGetStarted = () => {
-        navigate('/wallet');
+        navigate('/login');
     };
 
     const features = [
