@@ -3,7 +3,7 @@ import { Box, Typography, Button, Paper, Container, Avatar } from "@mui/material
 import { QRCodeCanvas } from "qrcode.react";
 
 const Template1 = ({ pageData }) => {
-    const background = pageData.isBackground && pageData.backgroundUrl
+    const background = pageData.backgroundUrl
         ? `url(${pageData.backgroundUrl})`
         : "linear-gradient(to bottom right, #ff7e5f, #feb47b)";
 
@@ -40,19 +40,6 @@ const Template1 = ({ pageData }) => {
                         gap: { xs: 2, sm: 0 },
                     }}
                 >
-                    {/* Logo */}
-                    {pageData.isLogo && pageData.logo && (
-                        <Avatar
-                            src={pageData.logo}
-                            alt={pageData.name}
-                            sx={{
-                                width: { xs: 80, sm: 100 },
-                                height: { xs: 80, sm: 100 },
-                                mb: { xs: 2, sm: 0 },
-                            }}
-                        />
-                    )}
-
                     {/* QR Code */}
                     <Box
                         sx={{
@@ -69,6 +56,20 @@ const Template1 = ({ pageData }) => {
                             bgColor="transparent"
                         />
                     </Box>
+
+                    {/* Logo */}
+                    {pageData.logoUrl && (
+                        <Avatar
+                            src={pageData.logoUrl}
+                            alt={pageData.name}
+                            sx={{
+                                width: { xs: 80, sm: 100 },
+                                height: { xs: 80, sm: 100 },
+                                mb: { xs: 2, sm: 0 },
+                                marginLeft: 2,
+                            }}
+                        />
+                    )}
 
                     {/* Title and Subtitle */}
                     <Box

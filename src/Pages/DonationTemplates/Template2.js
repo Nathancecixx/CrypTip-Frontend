@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import GamingIcon from '@mui/icons-material/SportsEsports';
 
 const Template2 = ({ pageData }) => {
-    const background = pageData.isBackground && pageData.backgroundUrl
+    const background = pageData.backgroundUrl
         ? `url(${pageData.backgroundUrl})`
         : "linear-gradient(135deg, #1f1c2c 0%, #928dab 100%)";
 

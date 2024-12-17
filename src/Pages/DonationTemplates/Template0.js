@@ -4,7 +4,7 @@ import { QRCodeCanvas } from "qrcode.react";
 import SolonaLogo from "../../Resources/Icons/Solona_Icon.png";
 
 const Template0 = ({ pageData }) => {
-    const background = pageData.isBackground && pageData.backgroundUrl
+    const background = pageData.backgroundUrl
         ? `url(${pageData.backgroundUrl})`
         : "linear-gradient(to bottom right, #6a11cb, #2575fc)";
 

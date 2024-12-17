@@ -4,6 +4,8 @@ import Template1 from "../Pages/DonationTemplates/Template1";
 import Template2 from "../Pages/DonationTemplates/Template2";
 import Template3 from "../Pages/DonationTemplates/Template3";
 
+import Template5 from "../Pages/DonationTemplates/Template5";
+
 
 const TemplateManager = ({ templateId, pageData }) => {
     switch (templateId) {
@@ -15,6 +17,8 @@ const TemplateManager = ({ templateId, pageData }) => {
             return <Template2 pageData={pageData} />;
         case 3:
             return <Template3 pageData={pageData} />;
+        case 5:
+            return <Template5 pageData={pageData} />;
         default:
             return <Template0 pageData={pageData} />; // Fallback to Template0
     }

@@ -25,6 +25,10 @@ import SolonaIcon from '../Resources/Icons/Solona_Icon.png';
 import SuiIcon from '../Resources/Icons/Sui_Icon.png';
 import TemplateManager from '../Controllers/TemplateManager'; // Ensure this path is correct
 import LiveDemo from '../Components/LiveDemo'; // Import the LiveDemo component
+import Customize_Icon from '../Resources/Icons/Customize_Icon.png';
+import EeasySetup_Icon from '../Resources/Icons/EasySetup_Icon.png';
+import LowFee_Icon from '../Resources/Icons/LowFee_Icon.png';
+import OpenSource_Icon from '../Resources/Icons/OpenSource_Icon.png';
 
 const LandingPage = () => {
     const theme = useTheme();
@@ -40,25 +44,25 @@ const LandingPage = () => {
             title: 'Easy Setup',
             description:
                 'Automate server setup with templates, manage roles, channels, and more.',
-            icon: '/path/to/icon1.svg', // Add relevant icons
+            icon: EeasySetup_Icon, // Add relevant icons
         },
         {
             title: 'Customizable',
             description:
                 'Access tools like project management integrations and code sharing.',
-            icon: '/path/to/icon2.svg',
+            icon: Customize_Icon,
         },
         {
             title: 'Low Fees',
             description:
                 'Enhance engagement with moderation tools and server events.',
-            icon: '/path/to/icon3.svg',
+            icon: LowFee_Icon,
         },
         {
             title: 'Open-Source',
             description:
                 'Our dedicated support team is available around the clock.',
-            icon: '/path/to/icon4.svg',
+            icon: OpenSource_Icon,
         },
     ];
 
@@ -76,7 +80,7 @@ const LandingPage = () => {
             supported: false,
         },
         {
-            name: 'Solana', // Corrected spelling from 'Solona' to 'Solana'
+            name: 'Solana',
             symbol: '$SOL',
             icon: SolonaIcon,
             supported: true,
@@ -121,7 +125,7 @@ const LandingPage = () => {
                         component="img"
                         src={LogoIcon}
                         alt="TipJar Logo"
-                        sx={{ width: isMobile ? '40px' : '50px' }}
+                        sx={{ width: isMobile ? '60px' : '75px' }}
                     />
                     <Box>
                         <Button
@@ -193,7 +197,7 @@ const LandingPage = () => {
                             textShadow: '2px 2px 8px rgba(0,0,0,0.5)',
                         }}
                     >
-                        Simplify Your Tips with CrypTip
+                        Simplify Tips with CrypTip
                     </Typography>
                     <Typography
                         variant="h6"
@@ -285,7 +289,7 @@ const LandingPage = () => {
                                         src={feature.icon}
                                         alt={`${feature.title} Icon`}
                                         sx={{
-                                            width: '60px',
+                                            width: '50px',
                                             marginBottom: '20px',
                                             transition: 'transform 0.3s ease',
                                         }}

@@ -40,7 +40,7 @@ const DashboardPage = () => {
     const [balance, setBalance] = useState(null);
 
     // Page fields
-    const [templateId, setTemplateId] = useState(0);
+    const [templateId, setTemplateId] = useState(1);
     const [isMinter, setIsMinter] = useState(false);
     const [tokenName, setTokenName] = useState("");
     const [tokenSupply, setTokenSupply] = useState("");
@@ -82,11 +82,11 @@ const DashboardPage = () => {
             }
             setLoading(true);
             try {
-                const docRef = doc(db, "landingPages", publicKey.toBase58());
+                const docRef = doc(db, "tippages", publicKey.toBase58());
                 const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {
                     const data = docSnap.data();
-                    setTemplateId(Number(data.templateId) || 0);
+                    setTemplateId(Number(data.templateId) || 1);
                     setIsMinter(Boolean(data.isMinter));
                     setTokenName(typeof data.tokenName === 'string' ? data.tokenName : "");
                     setTokenSupply(typeof data.tokenSupply === 'string' ? data.tokenSupply : "");
@@ -106,7 +106,7 @@ const DashboardPage = () => {
                     })) : []);
                 } else {
                     // Defaults if no page
-                    setTemplateId(0);
+                    setTemplateId(1);
                     setIsMinter(false);
                     setTokenName("");
                     setTokenSupply("");
@@ -200,14 +200,16 @@ const DashboardPage = () => {
     };
 
     // Define template options based on isMinter
-    const templateOptions = isMinter ? [5, 6, 7, 8, 9] : [0, 1, 2, 3, 4];
+    const templateOptions = isMinter ?
+        [11, 12, 13, 14, 15, 16, 17, 18, 19, 20] :
+        [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
     // Ensure templateId is valid for the current isMinter setting
     useEffect(() => {
-        if (isMinter && (templateId < 5 || templateId > 9)) {
-            setTemplateId(5);
-        } else if (!isMinter && (templateId < 0 || templateId > 4)) {
-            setTemplateId(0);
+        const validTemplates = isMinter ? [11, 12, 13, 14, 15, 16, 17, 18, 19, 20] : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        if (!validTemplates.includes(templateId)) {
+            // Reset to the first valid template ID
+            setTemplateId(validTemplates[0]);
         }
     }, [isMinter, templateId]);
 

@@ -15,8 +15,8 @@ const LiveDemo = () => {
             subtitle: "Support Independent Artists",
             description: "Donate to support emerging musicians and help them create more amazing music.",
             location: "Global",
-            logoUrl: "https://via.placeholder.com/100",
-            backgroundUrl: "https://via.placeholder.com/800x400",
+            logoUrl: "",
+            backgroundUrl: "",
             footer: "Thank you for your support!",
             cta: "Donate Now!",
             links: [
@@ -30,8 +30,8 @@ const LiveDemo = () => {
             subtitle: "Empower Artists Worldwide",
             description: "Your donations help artists create impactful works that inspire change.",
             location: "Worldwide",
-            logoUrl: "https://via.placeholder.com/100",
-            backgroundUrl: "https://via.placeholder.com/800x400",
+            logoUrl: "",
+            backgroundUrl: "",
             footer: "Your generosity makes a difference.",
             cta: "Support Now!",
             links: [
@@ -45,8 +45,8 @@ const LiveDemo = () => {
             subtitle: "Fuel the Future of Technology",
             description: "Contribute to groundbreaking tech projects that shape our world.",
             location: "Silicon Valley",
-            logoUrl: "https://via.placeholder.com/100",
-            backgroundUrl: "https://via.placeholder.com/800x400",
+            logoUrl: "",
+            backgroundUrl: "",
             footer: "Innovate with us.",
             cta: "Contribute Today!",
             links: [
@@ -79,17 +79,6 @@ const LiveDemo = () => {
                 padding: { xs: 2, md: 4 },
             }}
         >
-            <Typography
-                variant="h5"
-                sx={{
-                    textAlign: 'center',
-                    fontWeight: 'bold',
-                    color: '#FFFFFF',
-                    marginBottom: '20px',
-                }}
-            >
-                Live Demo: Donation Pages
-            </Typography>
             <Box
                 sx={{
                     position: 'relative',
